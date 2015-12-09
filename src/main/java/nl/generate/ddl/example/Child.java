@@ -12,7 +12,7 @@ import javax.persistence.UniqueConstraint;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-@Table(name = "CHILD", indexes = { @Index(columnList = "NAME", name = "IDX_NAME") }, uniqueConstraints = { @UniqueConstraint(columnNames = "NAME", name = "UK_NAME") })
+@Table(name = "CHILD", indexes = { @Index(columnList = "NAME", name = "IDX_CHILD_NAME") }, uniqueConstraints = { @UniqueConstraint(columnNames = "NAME", name = "UK_NAME") })
 @SequenceGenerator(allocationSize = 1, name = "CHILD_ID_GENERATOR", sequenceName = "CHILD_ID_SEQ")
 public class Child {
     @Id
