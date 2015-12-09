@@ -2,6 +2,7 @@ package nl.generate.ddl.example;
 
 import org.hibernate.jpa.AvailableSettings;
 
+import javax.persistence.Persistence;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -28,7 +29,7 @@ public class SchemaCreator {
         persistenceProperties.setProperty(AvailableSettings.SCHEMA_GEN_SCRIPTS_CREATE_TARGET, destination);
         persistenceProperties.setProperty(AvailableSettings.JDBC_DRIVER,"org.h2.Driver");
         persistenceProperties.setProperty(AvailableSettings.JDBC_URL,"jdbc:h2:mem:jpaschema");
-        javax.persistence.Persistence.generateSchema(persistenceUnitName, persistenceProperties);
+        Persistence.generateSchema(persistenceUnitName, persistenceProperties);
     }
 
 }
