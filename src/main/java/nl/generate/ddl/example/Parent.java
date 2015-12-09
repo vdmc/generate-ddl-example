@@ -32,7 +32,7 @@ public class Parent {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "PARENT_ID"), foreignKey = @ForeignKey(name ="FK_PARENT_CHILD_PARENT"), inverseJoinColumns = @JoinColumn(name = "CHILD_ID", foreignKey = @ForeignKey(name ="FK_ABC")), uniqueConstraints = {@UniqueConstraint(columnNames = "CHILD_ID", name = "UK_CHILD_ID") })
+    @JoinTable(name = "PARENT_CHILD", joinColumns = @JoinColumn(name = "PARENT_ID"), foreignKey = @ForeignKey(name ="FK_PARENT_CHILD_PARENT"), inverseJoinColumns = @JoinColumn(name = "CHILD_ID"), inverseForeignKey = @ForeignKey(name ="FK_ABC"), uniqueConstraints = {@UniqueConstraint(columnNames = "CHILD_ID", name = "UK_CHILD_ID") })
     private List<Child> children = new ArrayList<>();
 
 }
