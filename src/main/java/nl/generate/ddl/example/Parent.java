@@ -20,7 +20,7 @@ import java.util.List;
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
-@Table(name = "PARENT", indexes = { @Index(columnList = "NAME", name = "IDX_CHILD_NAME") }, uniqueConstraints = { @UniqueConstraint(columnNames = "NAME", name = "UK_NAME") })
+@Table(name = "PARENT", indexes = { @Index(columnList = "NAME", name = "IDX_PARENT_NAME") }, uniqueConstraints = { @UniqueConstraint(columnNames = "NAME", name = "UK__PARENT_NAME") })
 @SequenceGenerator(allocationSize = 1, name = "PARENT_ID_GENERATOR", sequenceName = "PARENT_ID_SEQ")
 public class Parent {
     @Id
